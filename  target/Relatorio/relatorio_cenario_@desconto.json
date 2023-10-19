@@ -1,0 +1,89 @@
+[
+  {
+    "line": 4,
+    "elements": [
+      {
+        "start_timestamp": "2023-09-28T21:57:10.253Z",
+        "line": 7,
+        "name": "Visualizar código de desconto",
+        "description": "",
+        "id": "receber-o-cupom-de-desconto-da-qazando;visualizar-código-de-desconto",
+        "type": "scenario",
+        "keyword": "Cenário",
+        "steps": [
+          {
+            "result": {
+              "duration": 7974015000,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "que estou no site da Qazando",
+            "match": {
+              "location": "DescontoStep.acessoSiteQazando()"
+            },
+            "keyword": "Dado "
+          },
+          {
+            "result": {
+              "duration": 80288900,
+              "status": "passed"
+            },
+            "line": 9,
+            "name": "preencho email",
+            "match": {
+              "location": "DescontoStep.preenchoEmail()"
+            },
+            "keyword": "Quando "
+          },
+          {
+            "result": {
+              "duration": 40611200,
+              "status": "passed"
+            },
+            "line": 10,
+            "name": "clico em ganhar cupom",
+            "match": {
+              "location": "DescontoStep.clicoGanharCupom()"
+            },
+            "keyword": "E "
+          },
+          {
+            "result": {
+              "duration": 24209000,
+              "status": "passed"
+            },
+            "line": 11,
+            "name": "visualizo o código de desconto",
+            "match": {
+              "location": "DescontoStep.visualizoCodigoDesconto()"
+            },
+            "keyword": "Então "
+          }
+        ],
+        "tags": [
+          {
+            "name": "@cenarioCompleto"
+          },
+          {
+            "name": "@desconto"
+          }
+        ]
+      }
+    ],
+    "name": "Receber o cupom de desconto da QAzando",
+    "description": "",
+    "id": "receber-o-cupom-de-desconto-da-qazando",
+    "keyword": "Funcionalidade",
+    "uri": "classpath:features/desconto.feature",
+    "tags": [
+      {
+        "name": "@cenarioCompleto",
+        "type": "Tag",
+        "location": {
+          "line": 3,
+          "column": 1
+        }
+      }
+    ]
+  }
+]
