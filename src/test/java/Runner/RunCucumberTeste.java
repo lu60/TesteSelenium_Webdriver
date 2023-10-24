@@ -12,7 +12,7 @@ import static java.sql.DriverManager.getDriver;
         plugin = {"json:target/relatorio/relatorio_cenario_@desconto.json", "html:target/relatorio/"},
         features = {"classpath:/features"},
         glue = {"Steps"},
-        tags = {"@camposValidos"}
+        tags = {"@login"}
 )
 public class RunCucumberTeste extends RunBase {
 

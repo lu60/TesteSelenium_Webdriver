@@ -2,7 +2,10 @@ package Steps;
 
 import Pages.CupomDescontoPage;
 import Runner.RunCucumberTeste;
+import Suporte.Screenshot;
 import Suporte.Utils;
+import cucumber.api.Scenario;
+import cucumber.api.java.After;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.E;
 import cucumber.api.java.pt.Então;
@@ -35,20 +38,9 @@ public class CupomDescontoStep extends RunCucumberTeste {
 
     public static class CadastroUsuarioStep extends RunCucumberTeste {
 
-        @Dado("acesso o cadastro de usuário")
-        public void cadastroUsuario() {
-        }
-
-        @Quando("preencho o formulário de cadastro")
-        public void preenchoFormularioCadastro() {
-        }
-
-        @E("clico em salvar")
-        public void clicarRegistrar() {
-        }
-
-        @Então("vejo mensagem de cadastro realizado com sucesso")
-        public void visualizarMensagemDeSucesso() {
+        @After
+        public static void printScreenQuandoFalhar(Scenario cenario) {
+            Screenshot.addScreenshotOnSecenario(cenario);
         }
     }
 }

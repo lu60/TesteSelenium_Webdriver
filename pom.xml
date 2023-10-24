@@ -83,7 +83,7 @@
         <dependency>
             <groupId>com.trivago.rta</groupId>
             <artifactId>cluecumber-report-plugin</artifactId>
-            <version>1.2.0</version>
+            <version>2.9.4</version>
         </dependency>
 
         <dependency>
@@ -95,6 +95,12 @@
             <groupId>info.cukes</groupId>
             <artifactId>cucumber-java</artifactId>
             <version>1.2.5</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>io.cucumber</groupId>
+            <artifactId>messages</artifactId>
+            <version>19.1.4</version>
             <scope>test</scope>
         </dependency>
 
@@ -111,7 +117,7 @@
             <plugin>
                 <groupId>com.trivago.rta</groupId>
                 <artifactId>cluecumber-report-plugin</artifactId>
-                <version>1.2.0</version>
+                <version>2.9.4</version>
                 <executions>
                     <execution>
                         <id>report</id>
@@ -135,7 +141,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>3.0.0-M5</version>
                 <configuration>
-                    <testFailureIgnore>true</testFailureIgnore>
+                    <testFailureIgnore>false</testFailureIgnore>
                 </configuration>
             </plugin>
         </plugins>

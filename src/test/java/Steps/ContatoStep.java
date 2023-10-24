@@ -1,6 +1,9 @@
 package Steps;
 
 import Pages.ContatoPage;
+import Suporte.Screenshot;
+import cucumber.api.Scenario;
+import cucumber.api.java.After;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.E;
 import cucumber.api.java.pt.Então;
@@ -27,6 +30,9 @@ public class ContatoStep {
     @Então("apresentar mensagem {string}")
     public void apresentaMensagem(String mensagemEsperada) {
         contato.apresentarMensagem(mensagemEsperada);
-
+    }
+    @After
+    public static void printScreenQuandoFalhar(Scenario cenario) {
+        Screenshot.addScreenshotOnSecenario(cenario);
     }
 }
