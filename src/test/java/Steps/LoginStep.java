@@ -2,6 +2,9 @@ package Steps;
 
 import Pages.LoginPage;
 import Runner.RunCucumberTeste;
+import Suporte.Screenshot;
+import cucumber.api.Scenario;
+import cucumber.api.java.After;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.E;
 import cucumber.api.java.pt.Então;
@@ -32,12 +35,17 @@ public class LoginStep {
     }
 
     @Então("visualizo mensagem {string} de campo com email inválido")
-    public void visualizoMensagemCampoEmailInvalido(String mensagemEmailInvalido ) {
+    public void visualizoMensagemCampoEmailInvalido(String mensagemEmailInvalido) {
         loginPage.visualizarMensagemEmailInvalido(mensagemEmailInvalido);
     }
 
     @Então("visualizo mensagem {string} de campo com senha inválida")
     public void visualizoMensagemCampoSenhaInvalida(String mensagemSenhaInvalida) {
         loginPage.visualizarMensagemSenhaInvalida(mensagemSenhaInvalida);
+    }
+
+    @After
+    public static void printScreenQuandoFalhar(Scenario cenario) {
+        Screenshot.addScreenshotOnSecenario(cenario);
     }
 }

@@ -2,7 +2,10 @@ package Steps;
 
 import Runner.RunBase;
 import Runner.RunCucumberTeste;
+import Suporte.Screenshot;
 import Suporte.Utils;
+import cucumber.api.Scenario;
+import cucumber.api.java.After;
 import cucumber.api.java.pt.Dado;
 import cucumber.api.java.pt.E;
 import cucumber.api.java.pt.Então;
@@ -42,5 +45,9 @@ public class InformacaoFaturamentoStep extends RunCucumberTeste {
     @Então("visualizo mensagem:")
     public void visualizoMensagem() {
         informacaoPage.visualizarMensagem();
+    }
+    @After
+    public static void printScreenQuandoFalhar(Scenario cenario) {
+        Screenshot.addScreenshotOnSecenario(cenario);
     }
 }
