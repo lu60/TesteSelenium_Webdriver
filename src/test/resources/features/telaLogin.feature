@@ -19,9 +19,9 @@ Funcionalidade: Validar os campos e botão na tela de Login
     Então visualizo mensagem "<Mensagem>" de campo com email inválido
 
     Exemplos:
-      | Email | Senha  | Mensagem          | Nome            |
-      | lu    | 123456 | E-mail inválidoX. | E-mail inválido |
-      |       | 123456 | E-mail inválido.  | E-mail vazio    |
+      | Email | Senha  | Mensagem         | Nome            |
+      | lu    | 123456 | E-mail inválido. | E-mail inválido |
+      |       | 123456 | E-mail inválido. | E-mail vazio    |
 
   @campoSenha-invalida
   Esquema do Cenário: Validação <Nome>
