@@ -27,4 +27,4 @@ jobs:
       run: chromedriver --url-base=/wd/hub &
 
     - name: Executar testes
-      uses: mvn test -Dtest=RunCucumberTeste -Dbrowser=chrome_ci
+      uses: mvn test -Dtest=RunCucumberTeste -Dbrowser=chrome
