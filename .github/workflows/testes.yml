@@ -15,8 +15,8 @@ jobs:
     - name: Instalar java 11
       uses: actions/setup-java@v3
       with:
-        distribution: 'adopt'
         java-version: '11'
+        distribution: 'adopt'
         cache: 'maven'
 
     - name: Intalar Chrome
