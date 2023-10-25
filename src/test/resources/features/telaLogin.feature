@@ -8,7 +8,7 @@ Funcionalidade: Validar os campos e botão na tela de Login
 
   @login-sucesso
   Cenário: Preencher campos da tela de Login com sucesso
-   # Quando preencho os campos "lu.pocebon@gmail.com" e "123456"
+    Quando preencho os campos "lu.pocebon@gmail.com" e "123456"
     E clico no botão login
     Então visualizo mensagem "Login realizado" de sucesso
 
