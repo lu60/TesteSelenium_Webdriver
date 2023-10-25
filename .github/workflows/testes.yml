@@ -34,7 +34,7 @@ jobs:
         run: mvn cluecumber-report:reporting
 
       - name: Arquivar relatório
-        run: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v3
         with:
           name: report-testes
           path: '**/formated-report/'
