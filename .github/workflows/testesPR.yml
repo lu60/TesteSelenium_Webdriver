@@ -1,0 +1,40 @@
+name: Smoke Testes - PR
+
+on:
+  pull_request:
+    branches: [ master ]
+
+jobs:
+  RunTeste:
+    runs-on: windows-latest
+
+    steps:
+      - name: Clonar o projeto
+        uses: actions/checkout@v3
+
+      - name: Instalar Java 11
+        uses: actions/setup-java@v3
+        with:
+          java-version: '11'
+          distribution: 'adopt'
+          cache: 'maven'
+
+      - name: Instalar Chrome
+        uses: browser-actions/setup-chrome@latest
+
+      - name: Instalar o Chrome Driver
+        uses: nanasess/setup-chromedriver@v2
+      - run: |
+          chromedriver --url-base=/wd/hub &
+
+      - name: Run Test
+        run: mvn test -Dtest=RunCucumberTeste -Dbrowser=chrome_ci
+
+      - name: Gerar relatório
+        run: mvn cluecumber-report:reporting
+
+      - name: Arquivar relatório
+        uses: actions/upload-artifact@v3
+        with:
+          name: report-testes
+          path: '**/formated-report/'
