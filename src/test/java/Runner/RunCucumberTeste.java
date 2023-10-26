@@ -9,7 +9,7 @@ import static java.sql.DriverManager.getDriver;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-        plugin = {"json:target/relatorio/relatorio_cenario_@desconto.json", "html:target/relatorio/"},
+        plugin = {"json:target/reports/relatorio_cenario_@login.json", "html:target/reports/"},
         features = {"classpath:/features"},
         glue = {"Steps"},
         tags = {"@login"}

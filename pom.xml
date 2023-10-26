@@ -91,12 +91,7 @@
             <artifactId>maven-surefire-plugin</artifactId>
             <version>3.0.0-M5</version>
         </dependency>
-        <dependency>
-            <groupId>info.cukes</groupId>
-            <artifactId>cucumber-java</artifactId>
-            <version>1.2.5</version>
-            <scope>test</scope>
-        </dependency>
+
         <dependency>
             <groupId>io.cucumber</groupId>
             <artifactId>messages</artifactId>
@@ -111,9 +106,16 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
-                <version>3.10.1</version>
+                <version>3.7.0</version>
+                <configuration>
+                    <encoding>UTF-8</encoding>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                    <includes>
+                        <include>src/test/java</include>
+                    </includes>
+                </configuration>
             </plugin>
-
             <plugin>
                 <groupId>com.trivago.rta</groupId>
                 <artifactId>cluecumber-report-plugin</artifactId>
@@ -128,11 +130,8 @@
                     </execution>
                 </executions>
                 <configuration>
-
                     <sourceJsonReportDirectory>${project.build.directory}/reports</sourceJsonReportDirectory>
-
-                    <generatedHtmlReportDirectory>${project.build.directory}/formatedreport
-                    </generatedHtmlReportDirectory>
+                    <generatedHtmlReportDirectory>${project.build.directory}/formated-report</generatedHtmlReportDirectory>
                 </configuration>
             </plugin>
 

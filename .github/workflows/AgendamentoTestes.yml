@@ -1,12 +1,12 @@
-name: Smoke Tests - PR
+name: Agendamento Testes - PR
 
 on:
-  pull_request:
-    branches: [ master ]
+  schedule:
+    - cron: '0/15 * * * 1-5'
 
 jobs:
-  RunTest:
-    runs-on: ubuntu-latest
+  RunTeste:
+    runs-on: windows-latest
 
     steps:
       - name: Clonar o projeto
@@ -23,11 +23,18 @@ jobs:
         uses: browser-actions/setup-chrome@latest
 
       - name: Instalar o Chrome Driver
-        uses: nanasess/setup-chromedriver@v1
+        uses: nanasess/setup-chromedriver@v2
       - run: |
-          export DISPLAY=:99
           chromedriver --url-base=/wd/hub &
-          sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional
 
       - name: Run Test
         run: mvn test -Dtest=RunCucumberTeste -Dbrowser=chrome_ci
+
+      - name: Gerar relatório
+        run: mvn cluecumber-report:reporting
+
+      - name: Arquivar relatório
+        uses: actions/upload-artifact@v3
+        with:
+          name: report-testes
+          path: '**/formated-report/'

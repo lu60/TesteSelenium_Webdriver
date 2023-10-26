@@ -32,7 +32,7 @@ public class RunBase {
             case CHROME_CI:
                 ChromeOptions chromeOptions = new ChromeOptions();
                 chromeOptions.addArguments("--headless");
-                driver = new ChromeDriver();
+                driver = new ChromeDriver(chromeOptions);
                 break;
             case FIREFOX:
                 driver = new FirefoxDriver();
