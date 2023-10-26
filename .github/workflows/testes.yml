@@ -1,4 +1,4 @@
-name: Smoke Tests - PR
+name: Smoke Testes - PR
 
 on:
   pull_request:
