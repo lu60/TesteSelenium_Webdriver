@@ -2,7 +2,7 @@ name: Agendamento Testes - PR
 
 on:
   schedule:
-    - cron: '0/15 11 * * 1-5'
+    - cron: '0/15 * * * 1-5'
 
 jobs:
   RunTeste:
