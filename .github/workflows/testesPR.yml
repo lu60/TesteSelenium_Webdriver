@@ -44,6 +44,8 @@ jobs:
         if: ${{success ()}}
         uses: act10ns/slack@v2
         #rtCamp/action-slack-notify@v2
+        with:
+          status: ${{ job.status }}
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_COLOR: ${{ job.status }}
@@ -56,6 +58,8 @@ jobs:
         if: ${{failure ()}}
         uses: act10ns/slack@v2
         #rtCamp/action-slack-notify@v2
+        with:
+          status: ${{ job.status }}
         env:
           SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_COLOR: ${{ job.status }}
