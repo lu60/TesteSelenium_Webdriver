@@ -6,7 +6,7 @@ on:
 
 jobs:
   RunTeste:
-    runs-on: windows-2022
+    runs-on: windows-latest
 
     steps:
       - name: Clonar o projeto
@@ -42,7 +42,7 @@ jobs:
 
       - name: Enviar notificação Slack - Sucesso
         if: ${{success ()}}
-        uses: act10ns/slack@v2
+        uses: actions/checkout@v4
         #rtCamp/action-slack-notify@v2
         with:
           status: ${{ job.status }}
@@ -56,7 +56,7 @@ jobs:
 
       - name: Enviar notificação Slack - Falha
         if: ${{failure ()}}
-        uses: act10ns/slack@v2
+        uses: actions/checkout@v4
         #rtCamp/action-slack-notify@v2
         with:
           status: ${{ job.status }}
