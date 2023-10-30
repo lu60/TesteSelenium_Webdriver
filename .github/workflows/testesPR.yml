@@ -42,12 +42,13 @@ jobs:
 
       - name: Enviar notificação Slack - Sucesso
         if: ${{success ()}}
-        uses: act10ns/slack@v2
+        uses: ravsamhq/notify-slack-action@v2
+        #act10ns/slack@v2
         #rtCamp/action-slack-notify@v2
         with:
           status: ${{ job.status }}
         env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_COLOR: ${{ job.status }}
           SLACK_ICON: https://www.shutterstock.com/pt/image-vector/whitegreen-checkmark-on-white-background-1769267717
           SLACK_MESSAGE: 'Teste passou com sucesso! :white_check_mark'
@@ -56,12 +57,13 @@ jobs:
 
       - name: Enviar notificação Slack - Falha
         if: ${{failure ()}}
-        uses: act10ns/slack@v2
+        uses: ravsamhq/notify-slack-action@v2
+        #act10ns/slack@v2
         #rtCamp/action-slack-notify@v2
         with:
           status: ${{ job.status }}
         env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
+          SLACK_WEBHOOK_URL: ${{ secrets.SLACK_WEBHOOK_URL }}
           SLACK_COLOR: ${{ job.status }}
           SLACK_ICON: https://www.shutterstock.com/pt/image-vector/vector-close-icon-160199060
           SLACK_MESSAGE: 'Teste Falhou! :crossmark'
