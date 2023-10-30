@@ -42,8 +42,7 @@ jobs:
 
       - name: Enviar notificação Slack - Sucesso
         if: ${{success ()}}
-        uses: ravsamhq/notify-slack-action@v2
-        #act10ns/slack@v2
+        uses: act10ns/slack@v2
         #rtCamp/action-slack-notify@v2
         with:
           status: ${{ job.status }}
@@ -57,8 +56,7 @@ jobs:
 
       - name: Enviar notificação Slack - Falha
         if: ${{failure ()}}
-        uses: ravsamhq/notify-slack-action@v2
-        #act10ns/slack@v2
+        uses: act10ns/slack@v2
         #rtCamp/action-slack-notify@v2
         with:
           status: ${{ job.status }}
