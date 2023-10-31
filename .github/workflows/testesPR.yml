@@ -7,7 +7,6 @@ on:
 jobs:
   RunTeste:
     runs-on: windows-latest
-
     steps:
       - name: Clonar o projeto
         uses: actions/checkout@v3
@@ -48,7 +47,7 @@ jobs:
         uses: actions/checkout@v4
         #rtCamp/action-slack-notify@v2
         env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }} 
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_COLOR: ${{ job.status }}
           SLACK_ICON: https://www.shutterstock.com/pt/image-vector/whitegreen-checkmark-on-white-background-1769267717
           SLACK_MESSAGE: 'Teste passou com sucesso! :white_check_mark'
