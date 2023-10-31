@@ -7,7 +7,6 @@ on:
 jobs:
   RunTeste:
     runs-on: windows-latest
-
     steps:
       - name: Clonar o projeto
         uses: actions/checkout@v3
