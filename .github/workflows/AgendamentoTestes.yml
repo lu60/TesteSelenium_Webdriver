@@ -1,4 +1,4 @@
-name: Agendar Testes - PR
+name: Agendamento Testes - PR
 
 on:
   schedule:
