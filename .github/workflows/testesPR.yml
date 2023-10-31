@@ -25,16 +25,20 @@ jobs:
       - name: Instalar o Chrome Driver
         uses: nanasess/setup-chromedriver@v2
       - run: |
+          export DISPLAY=:99
           chromedriver --url-base=/wd/hub &
+          sudo Xvfb -ac :99 -screen 0 1280x1024x24 > /dev/null 2>&1 & # optional
 
       - name: Run Test
-        run: mvn test -Dtest=RunCucumberTeste -Dbrowser=chrome_ci -Dcucumber.options="--tags @login-sucesso"
+        run: mvn test -Dtest=RunCucumberTeste -Dbrowser=chrome_ci
         #-Dcucumber.options="--tags @login-sucesso"
 
       - name: Gerar relatório
+        if: always()
         run: mvn cluecumber-report:reporting
 
       - name: Arquivar relatório
+        if: always()
         uses: actions/upload-artifact@v3
         with:
           name: report-testes
