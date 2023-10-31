@@ -48,7 +48,7 @@ jobs:
         uses: actions/checkout@v4
         #rtCamp/action-slack-notify@v2
         env:
-          TESTE_SLACK: ${{ secrets.TESTE_SLACK }}
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }} 
           SLACK_COLOR: ${{ job.status }}
           SLACK_ICON: https://www.shutterstock.com/pt/image-vector/whitegreen-checkmark-on-white-background-1769267717
           SLACK_MESSAGE: 'Teste passou com sucesso! :white_check_mark'
@@ -60,7 +60,7 @@ jobs:
         uses: actions/checkout@v4
         #rtCamp/action-slack-notify@v2
         env:
-          TESTE_SLACK: ${{ secrets.TESTE_SLACK }}
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK }}
           SLACK_COLOR: ${{ job.status }}
           SLACK_ICON: https://www.shutterstock.com/pt/image-vector/vector-close-icon-160199060
           SLACK_MESSAGE: 'Teste Falhou! :crossmark'
